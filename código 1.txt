@@ -1,0 +1,42 @@
+https://typescriptlang.org/play/
+
+------------------------------------------------------------------------------------------
+
+let nome: string = "Ana";
+let idade: number = 25;
+let ativo: boolean = true;
+let notas = [8, 9, 10];
+let pessoa = {nome: "Bruno" };
+let indefinido;
+
+
+let ativo1 = false;
+let ativo2 = "false";
+
+let ativo3 = 0;
+let ativo4 = "0";
+
+let zero: number = 0;
+let numero_s: string = "0";
+
+idade = 17;
+let estaacompanhado = true;
+
+if(idade >=18 || estaacompanhado || false){
+    console.log("Maior de idade")
+} else {
+    console.log("Menor de idade")
+}
+
+
+console.log(typeof nome);             // string
+console.log(typeof idade);           // number
+console.log(typeof ativo);          // boolean
+console.log(typeof notas);         // object
+console.log(typeof pessoa);       // object  
+console.log(typeof indefinido);  // undefined 
+
+console.log(typeof ativo1);
+console.log(typeof ativo2);
+
+

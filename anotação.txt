@@ -1,0 +1,24 @@
+
+(printar ou mostrar algo) echo "nome_do_arquivo"  >>   - comandos da distribuição Linux  
+
+npm init -y -> já cria o .json sem precisar ficar dando enter
+
+
+
+Por padrão, todas as variáveis que não são declaradas são do tipo :any
+
+let A:any = 1;    é a mesma coisa de   let A =1;
+
+
+
+
+biblioteca lint (verificador/guardião) -> Configura se obriga a todas as variáveis terem um tipo ou não  (exemplo: não aceito variáveis do tipo :any)
+|_ É um utilitário que analisa o código-fonte de um programa sem executá-lo para encontrar erros de sintaxe, bugs, falhas de segurança e problemas de estilo
+
+
+
+Tipos de variáveis:
+let - declarar variável dentro de escopo (funções, objetos, classes. Declarei um let na function A, o let será A somente na função.)
+var - declara uma variável "global"
+const- declara uma constante
+
