@@ -1,4 +1,4 @@
-https://typescriptlang.org/play/
+// https://typescriptlang.org/play/
 
 ------------------------------------------------------------------------------------------
 
