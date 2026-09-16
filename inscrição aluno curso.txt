@@ -20,18 +20,29 @@ Regra de valor:
 let nome = "Vitor"; 
 let idade = 23; 
 let email = "vitor@teste.com"; 
-let cursoADS = false;
-let cursoDADOS = true;
+let curso= ;
 let concluiu_2grau = true; 
 let vagas = 80;
+let inscricao_valida = true
 
 
-if(nome.length < 3) {
-    console.log("Inscrição recusada: nome inválido.");
-} 
-
-if(idade < 16) {
-    console.log("Idade mínima não atingida.");
+if(nome.length > 3){
+    console.log("Nome registrado.");
+    inscricao_valida = true
+} else {
+    console.log("Insira um nome, por favor.");
 }
 
-if()
+if(idade > 16){
+    console.log("Idade mínima atingida.");
+} else {
+    console.log ("Idade mínima não atingida.");
+}
+
+if(email.includes("@")) {
+    console.log("E-mail registrado.")
+} else {
+    console.log("E-mail inválido.")
+}
+
+if(curso)
