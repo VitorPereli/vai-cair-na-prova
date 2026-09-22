@@ -1,0 +1,20 @@
+Regra de negócio: Inscrição de Aluno em Curso
+
+Uma escola de tecnologia abriu inscrições para seus cursos. O sistema deve validar os dados do formulário e informar se a inscrição foi aprovada ou recusada.
+Dados do formulário: nome, idade, e-mail, curso escolhido, se concluiu o ensino médio e quantidade de vagas disponíveis no curso.
+
+Regras de validação:
+
+RN01: O nome é obrigatório e deve ter pelo menos três (3) caracteres.
+RN02: O aluno deve ter 16 anos ou mais.
+RN03: O e-mail é obrigatório e deve conter o caractere "@".
+RN04: O curso escolhido deve ser "Web", "Mobile", ou "Dados".
+RN05: Para o curso "Dados", o aluno precisa ter concluído o ensino médio.
+RN06: Só é possível se inscrever se houver vagas disponíveis (vagas maiores que 0).
+
+Regra de valor:
+
+RN07: O valor da inscrição é de R$100,00. Alunos com 60 anos ou mais tem 50% de desconto.
+
+Resultado esperado: O sistema deve exibir cada erro encontrado e, ao final, se a inscrição foi aprovada ou recusada. 
+Se aprovada, deve exibir o nome do aluno, o curso e o valor a pagar
