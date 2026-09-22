@@ -1,0 +1,20 @@
+{
+  "name": "vai-cair-na-prova",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/VitorPereli/vai-cair-na-prova#readme",
+  "bugs": {
+    "url": "https://github.com/VitorPereli/vai-cair-na-prova/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitorPereli/vai-cair-na-prova.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "inscrição aluno curso.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

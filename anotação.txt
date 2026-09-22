@@ -22,3 +22,8 @@ let - declarar variável dentro de escopo (funções, objetos, classes. Declarei
 var - declara uma variável "global"
 const- declara uma constante
 
+[]  -> Array ou vetor sempre entre conchete
+{} -> objetos
+
+typeof -> tipa a variável
+return - define o tipo da função
