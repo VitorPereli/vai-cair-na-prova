@@ -1,0 +1,135 @@
+INTERFACE
+
+
+Interfaces no TypeScript servem como "contratos" ou "moldes" para definir a estrutura que um objeto deve ter.
+
+Enquanto até agora você usou tipos simples (number, string, boolean) para variáveis e parâmetros de funções, a interface entra em ação quando você precisa agrupar vários dados relacionados em um único objeto.
+
+Exemplo Prático
+Imagine que você quer criar um objeto para representar um aluno de ADS. Em vez de passar vários parâmetros soltos para uma função, você cria uma interface:
+
+TypeScript
+// 1. Definindo o "molde" do aluno
+interface Aluno {
+    id: number;
+    nome: string;
+    turma: string;
+    ativo: boolean;
+    coeficienteRendimento?: number; // O '?' indica que este campo é opcional
+}
+
+// 2. Criando um objeto que segue essa interface
+let aluno1: Aluno = {
+    id: 1,
+    nome: "Carlos",
+    turma: "ADS-1A",
+    ativo: true
+};
+
+// 3. Usando a interface como tipo para parâmetros de funções
+function exibirAluno(aluno: Aluno) {
+    console.log(`Aluno: \({aluno.nome} | Turma:\){aluno.turma}`);
+}
+
+exibirAluno(aluno1);
+Principais Pontos que Seu Professor Deve Mostrar:
+Contrato de Propriedades: O TypeScript vai emitir um erro em tempo de compilação se você tentar criar um objeto Aluno sem uma das propriedades obrigatórias (como esquecer o nome ou colocar um number onde deveria ser string).
+
+Propriedades Opcionais (?): Permite indicar campos que nem sempre estarão presentes.
+
+Propriedades Somente Leitura (readonly): Impede que o valor de determinado campo do objeto seja alterado depois de criado.
+
+Uso com Funções: Como tipar parâmetros e retornos usando interfaces para manter o código limpo e organizado.
+
+__________________________________________________________________________________________________________________
+
+CLASSE
+
+Classes são as estruturas fundamentais da Programação Orientada a Objetos (POO). Enquanto a interface que vimos antes define apenas o formato (o contrato) de um objeto, a classe define tanto a estrutura quanto o comportamento (o molde e o código que roda).
+
+Pense na classe como uma fábrica ou uma planta baixa: ela especifica quais dados (propriedades) e quais ações (métodos) os objetos gerados a partir dela vão possuir.
+
+Exemplo Prático em TypeScript
+Seguindo a linha da turma de ADS, veja como transformar o conceito de "Aluno" em uma classe com comportamento próprio:
+
+TypeScript
+class AlunoADS {
+    // 1. Propriedades (os dados)
+    nome: string;
+    ra: string;
+    semestre: number;
+
+    // 2. Construtor: método executado ao criar um novo objeto com 'new'
+    constructor(nome: string, ra: string, semestre: number) {
+        this.nome = nome;
+        this.ra = ra;
+        this.semestre = semestre;
+    }
+
+    // 3. Método (o comportamento/ação)
+    apresentar(): void {
+        console.log(`Olá, meu nome é \({this.nome}, meu RA é\){this.ra} e estou no ${this.semestre}º semestre.`);
+    }
+}
+
+// Criando instâncias (objetos) a partir da classe
+const aluno1 = new AlunoADS("Mariana", "RA12345", 2);
+aluno1.apresentar(); // Saída: Olá, meu nome é Mariana, meu RA é RA12345 e estou no 2º semestre.
+O que mais o seu professor deve abordar sobre Classes:
+Modificadores de Acesso (public, private, protected): Controlam quem pode ver ou modificar as propriedades de dentro da classe. Por exemplo, deixar o saldo de uma conta ou as notas de um aluno private para que só possam ser alteradas por métodos seguros.
+
+O Construtor (constructor): O método especial usado para inicializar os valores quando o objeto nasce.
+
+Herança (extends): Permite criar uma classe nova aproveitando código de uma classe existente (por exemplo, criar uma classe Professor ou Coordenador que herda características gerais de uma classe base Pessoa).
+_________________________________________________________________________________________________________________
+
+OBJETOS E JSON
+
+bjetos são estruturas de dados em formato de chave-valor que armazenam propriedades e coleções de informações na memória do seu programa. Já o JSON (JavaScript Object Notation) é apenas um texto plano formatado exatamente como um objeto, usado para transmitir esses dados entre sistemas — como de um servidor web para a sua aplicação TypeScript.
+
+Objetos em TypeScript
+Na prática, você cria um objeto literais usando chaves {}. Se você estiver usando o TypeScript, ele infere os tipos automaticamente ou você pode usar aquela interface que vimos antes para tipar o objeto.
+
+TypeScript
+// Objeto literal em TypeScript
+const usuario = {
+    id: 1,
+    nome: "Ana",
+    email: "ana@ads.com"
+};
+
+console.log(usuario.nome); // Acessando a propriedade: "Ana"
+O que é o JSON?
+O JSON é um formato de intercâmbio de dados universal. Ele não é um objeto JavaScript/TypeScript vivo na memória, mas sim uma string (um texto) que imita a sintaxe de um objeto, ideal para salvar em arquivos (como .json) ou enviar via requisições HTTP (APIs).
+
+A principal diferença visual e estrutural é que no JSON todas as chaves precisam obrigatoriamente estar entre aspas duplas, e ele não aceita funções ou métodos, apenas dados primitivos (strings, números, booleanos, arrays e outros objetos).
+
+Exemplo de uma string em formato JSON:
+
+JSON
+{
+    "id": 1,
+    "nome": "Ana",
+    "email": "ana@ads.com"
+}
+Convertendo entre Objetos e JSON
+No dia a dia de desenvolvimento (muito comum em projetos web na faculdade), você frequentemente vai precisar transformar um objeto do TypeScript em texto JSON para enviar para uma API, ou fazer o inverso (pegar o texto que veio da internet e transformar em objeto manipulável).
+
+Para isso, o JavaScript/TypeScript nativo oferece duas funções principais dentro do objeto global JSON:
+
+JSON.stringify(): Transforma um objeto do TypeScript em uma string JSON.
+
+JSON.parse(): Transforma uma string JSON em um objeto real do TypeScript.
+
+TypeScript
+// 1. Objeto TypeScript original
+const dadosAluno = { ra: "998877", curso: "ADS" };
+
+// 2. Convertendo Objeto para String JSON (para envio)
+const textoJson = JSON.stringify(dadosAluno);
+console.log(textoJson); // '{"ra":"998877","curso":"ADS"}' (é uma string)
+
+// 3. Convertendo String JSON para Objeto (recebido de uma API)
+const stringRecebida = '{"ra":"112233","curso":"ADS"}';
+const objetoConvertido = JSON.parse(stringRecebida);
+console.log(objetoConvertido.ra); // "998877" (volta a ser objeto acessível por ponto)
