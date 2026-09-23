@@ -27,3 +27,29 @@ const- declara uma constante
 
 typeof -> tipa a variável
 return - define o tipo da função
+
+
+cria o arquivo .gitignore e adiciona .nome_do_arquivo que quiser ignorar.
+
+
+git status - mostra tudo que está alterado no projeto
+
+git add - coloca o projeto em preparação (stage de mudança)
+
+git comit -m - registra a alteração
+
+mergear - juntar a branch com a master/main
+
+touch - cria um arquivo (comando do Linux)
+
+#pesquisar sobre json e objetos
+
+questão na prova:
+
+.toUpperCase()
+.toLowerCase()
+.lentgh
+
+"ou":
+|| -> apenas lógico (condicionais)
+| -> atribuiçção
