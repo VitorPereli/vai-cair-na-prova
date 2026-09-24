@@ -1,0 +1,25 @@
+## Depois do return de uma função, o código não continua:
+
+function x (I) {
+    return I;     ----> O CÓDIGO PARA AQUI
+    return 2;
+    return 3;
+
+}
+
+function X (I: any) {
+    if (I == 8) {
+        return "ok";
+    }
+    return "false";
+}
+
+let n1 = X(12)
+let n2 = X(8)
+
+console.log (n1)
+console.log (n2)
+
+
+
+VETOR:
